@@ -3,21 +3,19 @@ name: Fork OSS
 on:  
   push:
   pull_request:
+    types: ['opened', 'edited', 'reopened', 'synchronize']
   schedule:
     - cron: '0 0 * * *'  # every day at midnight
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
       with:
         name: kubernetes-sigs/kubespray.git
-
-    - name: Add upstream repo to list of remotes
-      run: git remote add upstream ${repository}
-
+    - run: git remote add upstream ${repository} #Add upstream repo to list of remotes
+    
     - name: Verify the new remote named upstream
       run: git remote -v
 
