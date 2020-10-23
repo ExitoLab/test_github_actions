@@ -11,9 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
       with:
-        name: kubernetes-sigs/kubespray.git
+        repository: kubernetes-sigs/kubespray.git
     
     - name: Add upstream repo to list of remotes
     - run: git remote add upstream ${repository} #
