@@ -13,8 +13,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
       with:
-        repository: kubernetes-sigs/kubespray.git
-    
+        repository: kubernetes-sigs/kubespray
     env:
       CI: true
       repository: "https://github.com/kubernetes-sigs/kubespray.git"
