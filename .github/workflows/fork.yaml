@@ -20,7 +20,9 @@ jobs:
       run: git fetch --all
 
     - name: Git-clone
-      run: git clone https://github.com/kubernetes-sigs/kubespray.git
+      run: |
+        git clone https://github.com/kubernetes-sigs/kubespray.git
+        ls -al
     
     env:
       CI: true
