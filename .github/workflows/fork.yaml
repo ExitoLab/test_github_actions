@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
-        ref: 'master'
     - run: |
         git clone https://github.com/kubernetes-sigs/kubespray.git"    
     env:
