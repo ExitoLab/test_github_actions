@@ -9,9 +9,8 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repo
-    - run: |
-        git clone https://github.com/kubernetes-sigs/kubespray.git"    
+    - name: Git-version
+      run: git version   
     env:
       CI: true
       repository: "https://github.com/kubernetes-sigs/kubespray.git"
