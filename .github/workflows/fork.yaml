@@ -4,16 +4,18 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: "0 0 * * *"  # every day at midnight
-
+    - cron: '0 0 * * *'  # every day at midnight
 jobs:
-  build:
+  repo-sync:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
-        repository: kubernetes-sigs/kubespray
+        fetch-depth: '0'
+        ref: 'master'
+    - run: |
+        git clone https://github.com/kubernetes-sigs/kubespray.git"    
     env:
       CI: true
       repository: "https://github.com/kubernetes-sigs/kubespray.git"
