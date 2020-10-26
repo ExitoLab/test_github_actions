@@ -9,9 +9,6 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-    - name: Git-remote-add
-      run: git remote add kubespray https://github.com/kubernetes-sigs/kubespray.git
-
     - name: Git-fetch-all
       run: git fetch --all
 
